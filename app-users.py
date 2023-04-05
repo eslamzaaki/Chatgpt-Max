@@ -6,8 +6,8 @@ import html2text
 import requests
 import json
 import streamlit as st
-openai.api_key = "sk-XXX"
-openai.organization = "org-XXX"
+openai.api_key = st.secrets["API_KEY"]
+openai.organization =st.secrets["ORG_KEY"]
 
 
 def BitcoinPriceAnalysis():
@@ -134,7 +134,7 @@ Please keep this information in mind and generate a prompt about  """ + input}
     url = 'https://stablediffusionapi.com/api/v3/text2img'
 
     data = {
-        "key": "RXXXXXX",
+        "key": st.secrets["REQUEST_KEY"],
         "prompt": promptGenerated,
         "negative_prompt": "",
         "width": "512",
@@ -148,9 +148,8 @@ Please keep this information in mind and generate a prompt about  """ + input}
         "track_id": None
     }
 
-    response = requests.post(url, json=data)
+    response = requests.post(url, json=data,headers={ "Content-Type": "application\/json"})
     JSONResult = json.loads(response.text)
-    print("Generating Image...")
     imgURL = JSONResult["output"][0]
     return imgURL
 
