@@ -1,0 +1,9 @@
+openai
+urllib
+json
+requests
+html2text
+streamlit
+bs4
+selenium
+selenium_stealth
