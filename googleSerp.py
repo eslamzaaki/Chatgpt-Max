@@ -6,11 +6,11 @@ from selenium.webdriver.chrome.service import Service
 
 
 def GetTop1GoogleResults(input):
-    options = webdriver.ChromeOptions()
+    options = webdriver.FirefoxOptions()
     options.add_argument("--headless")
     options.add_experimental_option("excludeSwitches", ["enable-automation"])
     options.add_experimental_option('useAutomationExtension', False)
-    driver = webdriver.Chrome(
+    driver = webdriver.Firefox(
         options=options,service=Service('chromedriver'))
 
     stealth(driver,
