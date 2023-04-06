@@ -2,7 +2,7 @@ from selenium import webdriver
 from selenium_stealth import stealth
 from bs4 import BeautifulSoup
 from urllib.parse import urlparse
-from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.firefox.service import Service
 
 
 def GetTop1GoogleResults(input):
