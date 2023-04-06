@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium_stealth import stealth
 from bs4 import BeautifulSoup
 from urllib.parse import urlparse
+from selenium.webdriver.chrome.service import Service
 
 
 def GetTop1GoogleResults(input):
@@ -10,7 +11,7 @@ def GetTop1GoogleResults(input):
     options.add_experimental_option("excludeSwitches", ["enable-automation"])
     options.add_experimental_option('useAutomationExtension', False)
     driver = webdriver.Chrome(
-        options=options, executable_path="\chromedriver.exe")
+        options=options,service=Service('/path/to/chromedriver'))
 
     stealth(driver,
             languages=["en-US", "en"],

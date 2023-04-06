@@ -6,9 +6,15 @@ import html2text
 import requests
 import json
 import streamlit as st
-openai.api_key = st.secrets["API_KEY"]
-openai.organization =st.secrets["ORG_KEY"]
 
+# openai.api_key = st.secrets["API_KEY"]
+# openai.organization =st.secrets["ORG_KEY"]
+API_KEY="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"
+ORG_KEY="org-NWHau2jQd3IqYxrIlwtbQ7Ne"
+REQUEST_KEY="zbBjAApXoao0zb85z1bvu4mH7ty8uReMxm9kkddBhSIVx519uLraETuFgBn8"
+
+openai.api_key=API_KEY
+openai.organization=ORG_KEY
 
 def BitcoinPriceAnalysis():
 
@@ -134,7 +140,8 @@ Please keep this information in mind and generate a prompt about  """ + input}
     url = 'https://stablediffusionapi.com/api/v3/text2img'
 
     data = {
-        "key": st.secrets["REQUEST_KEY"],
+      #  "key": st.secrets["REQUEST_KEY"],
+      "key":REQUEST_KEY,
         "prompt": promptGenerated,
         "negative_prompt": "",
         "width": "512",
