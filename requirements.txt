@@ -5,4 +5,3 @@ requests==2.25.1
 selenium==4.8.3
 selenium_stealth==1.0.6
 streamlit==1.20.0
-chromedriver_installer==2.4.2
