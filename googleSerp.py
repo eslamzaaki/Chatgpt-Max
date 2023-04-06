@@ -11,7 +11,7 @@ def GetTop1GoogleResults(input):
     options.add_experimental_option("excludeSwitches", ["enable-automation"])
     options.add_experimental_option('useAutomationExtension', False)
     driver = webdriver.Chrome(
-        options=options,service=Service('/path/to/chromedriver'))
+        options=options,service=Service('chromedriver'))
 
     stealth(driver,
             languages=["en-US", "en"],
