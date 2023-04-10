@@ -2,20 +2,16 @@ from selenium import webdriver
 from selenium_stealth import stealth
 from bs4 import BeautifulSoup
 from urllib.parse import urlparse
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.chrome.options import Options
-from webdriver_manager.chrome import ChromeDriverManager
-
-
 
 
 
 def GetTop1GoogleResults(input):
-    options = Options()
+    options = webdriver.ChromeOptions()
     options.add_argument("--headless")
     options.add_experimental_option("excludeSwitches", ["enable-automation"])
     options.add_experimental_option('useAutomationExtension', False)
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+    driver = webdriver.Chrome(
+        options=options, executable_path="\chromedriver.exe")
 
     stealth(driver,
             languages=["en-US", "en"],
